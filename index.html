@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <section>
+    <section class="section-1">
         <input type="text" placeholder="Search for a city...">
-        <button>Search</button>
+        <button id="search-btn">Search</button>
         <div class="search-history">city</div>
         <div class="search-history">city</div>
         <div class="search-history">city</div>
@@ -22,7 +23,17 @@
         <div class="search-history">city</div>
         <div class="search-history">city</div>
     </section>
-    <section></section>
+    <section>
+        <div id="c-forecast-section">Current Forecast:</div>
+    </section>
+    <section>
+        <div id="5-d-forecast-section">5-Day Forecast:</div>
+            <div class="days">day</div>
+            <div class="days">day</div>
+            <div class="days">day</div>
+            <div class="days">day</div>
+            <div class="days">day</div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

@@ -2,3 +2,32 @@
     box-sizing: border-box;
   }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: black;
+}
+
+body {
+ /* background-image: url("./assets/css/images/stars-bg-image.jpg");*/
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.section-1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+
+
+}
+
+.search-history {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(177, 174, 174);
+  width: fit-content;
+  padding: 10px;
+}
