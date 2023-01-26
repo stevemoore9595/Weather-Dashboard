@@ -11,28 +11,33 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <section class="section-1">
-        <input type="text" placeholder="Search for a city...">
-        <button id="search-btn">Search</button>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
-        <div class="search-history">city</div>
+    <section class="search-section">
+        <input type="text" class="ph-box" placeholder="Search for a city...">
+        <button id="search-btn" class="main-btn">Search</button>
+    <div class="history-btns">
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+        <button class="search-history">City</button>
+    </div>
     </section>
     <section>
-        <div id="c-forecast-section">Current Forecast:</div>
+        <h2 id="c-forecast-section" class="current">Current Forecast:</h2>
+            <div></div>
     </section>
-    <section>
-        <div id="5-d-forecast-section">5-Day Forecast:</div>
+    <section class="future">
+        <h2 id="5-d-forecast-section">5-Day Forecast:</h2>
+        <div class="wrap">
             <div class="days">day</div>
             <div class="days">day</div>
             <div class="days">day</div>
             <div class="days">day</div>
             <div class="days">day</div>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>

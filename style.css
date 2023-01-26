@@ -8,6 +8,7 @@ header {
   align-items: center;
   border: solid;
   border-color: black;
+  margin: none;
 }
 
 body {
@@ -15,19 +16,82 @@ body {
  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.section-1 {
+.search-section {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.ph-box {
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.main-btn {
+  margin-left: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightgray;
+  width: 100px;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: black;
+  color: lightgray;
+  
+}
+.history-btns {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  
+  margin-left: 100px;
+}
 
+.search-history:hover {
+  background-color: black;
+  color: lightgray;
+}
+.search-history {
+  align-items:center;
+  border: none;
+  border-radius: 10px;
+  background-color: lightgray;
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.search-history:hover {
+  background-color: black;
+  color: lightgray;
+}
+
+.current {
+  border: normal;
+  border-radius: 10px;
+  background-color: lightgray;
+  height: 300px;
 
 }
 
-.search-history {
-  border: none;
+.future {
+  border: normal;
   border-radius: 10px;
-  background-color: rgb(177, 174, 174);
-  width: fit-content;
-  padding: 10px;
+  background-color: lightgray;
+  height: 400px;
+  padding: 1px;
+}
+
+.days {
+  border: solid;
+  border-radius: 10px;
+  width: 200px;
+  height: 300px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
 }
