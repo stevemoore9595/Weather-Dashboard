@@ -2,22 +2,63 @@
 const searchBtn = document.getElementById('search-btn')
 const userCity = document.getElementById('input-city')
 const cardWrap = document.getElementById('card-1')
-const cardWrap2 = document.getElementById('card-2')
-const cardWrap3 = document.getElementById('card-3')
-const cardWrap4 = document.getElementById('card-4')
-const cardWrap5 = document.getElementById('card-5')
+const date2 = document.getElementById('date-2')
+const temperature2 = document.getElementById('temperature-2')
+const humidity2 = document.getElementById('humidity-2')
+const windSpeed2 = document.getElementById('windspeed-2')
+const icon2 = document.getElementById('icon-2')
+const date = document.getElementById('date')
+const temperature = document.getElementById('temperature')
+const humidity = document.getElementById('humidity')
+const windSpeed = document.getElementById('windspeed')
+const icon = document.getElementById('icon')
+
 function cityInput(city) {
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function(response){
     return response.json()
 }).then(function(data){
     console.log(data)
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function(response){
+    
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function(response){
         return response.json()
     }).then(function(data){
         console.log(data)
 
-cardWrap.textContent = ' Date: ' + data.list[0].dt_txt + ' Temperature: ' + data.list[0].main.temp  
-+ ' Humidity: ' + data.list[0].main.humidity + ' Wind Speed: ' + data.list[0].wind.speed
+      date.innerHTML = `<span> Date ${data.list[0].dt_txt}</span>`
+      temperature.innerHTML = `<span> Temperature ${data.list[0].main.temp}</span>`
+      humidity.innerHTML = `<span> Humidity ${data.list[0].main.humidity}</span>`
+      windSpeed.innerHTML = `<span> Wind Speed ${data.list[0].wind.speed}</span>`
+      icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+      date.innerHTML = `<span> Date ${data.list[0].dt_txt}</span>`
+      temperature.innerHTML = `<span> Temperature ${data.list[0].main.temp}</span>`
+      humidity.innerHTML = `<span> Humidity ${data.list[0].main.humidity}</span>`
+      windSpeed.innerHTML = `<span> Wind Speed ${data.list[0].wind.speed}</span>`
+      icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+      date.innerHTML = `<span> Date ${data.list[0].dt_txt}</span>`
+      temperature.innerHTML = `<span> Temperature ${data.list[0].main.temp}</span>`
+      humidity.innerHTML = `<span> Humidity ${data.list[0].main.humidity}</span>`
+      windSpeed.innerHTML = `<span> Wind Speed ${data.list[0].wind.speed}</span>`
+      icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+      date.innerHTML = `<span> Date ${data.list[0].dt_txt}</span>`
+      temperature.innerHTML = `<span> Temperature ${data.list[0].main.temp}</span>`
+      humidity.innerHTML = `<span> Humidity ${data.list[0].main.humidity}</span>`
+      windSpeed.innerHTML = `<span> Wind Speed ${data.list[0].wind.speed}</span>`
+      icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+      date.innerHTML = `<span> Date ${data.list[0].dt_txt}</span>`
+      temperature.innerHTML = `<span> Temperature ${data.list[0].main.temp}</span>`
+      humidity.innerHTML = `<span> Humidity ${data.list[0].main.humidity}</span>`
+      windSpeed.innerHTML = `<span> Wind Speed ${data.list[0].wind.speed}</span>`
+      icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+    //let date = data.list[0].weather.icon
+    //Create weatherCards.textContent = <div> container and <div> per element in html and then create a string with the container and use the imperial method ${}.
+     
+// cardWrap.textContent =  ' Date: ' + data.list[0].dt_txt +  ' Temperature: ' + data.list[0].main.temp 
+// + ' Humidity: ' + data.list[0].main.humidity + '\n'; ' Wind Speed: ' + data.list[0].wind.speed
 
 for (var i = 5; i < cardWrap; i++) {
     var cardsEl = document.createElement('cards-1')
@@ -27,8 +68,8 @@ console.log(cardsEl)
 }
 
 {
-    cardWrap2.textContent = ' Date: ' + data.list[6].dt_txt + ' Temperature: ' + data.list[6].main.temp  
-+ ' Humidity: ' + data.list[6].main.humidity + ' Wind Speed: ' + data.list[6].wind.speed
+//     cardWrap2.textContent = ' Date: ' + data.list[6].dt_txt + ' Temperature: ' + data.list[6].main.temp  
+// + ' Humidity: ' + data.list[6].main.humidity + ' Wind Speed: ' + data.list[6].wind.speed
 
 for (var i = 5; i < cardWrap2; i++) {
     var cardsEl = document.createElement('cards-2')
@@ -73,9 +114,13 @@ console.log(cardsEl)
 }}}}
 
     })
-});
+})
 }
+
 searchBtn.addEventListener('click', function(event){
     event.preventDefault()
     cityInput(userCity.value.trim())
 })
+
+
+// = <img src= "http://openweathermap.org/img/wn/${icon}@2x.png" alt="weather icon" class="weather-pic"></img>; 
