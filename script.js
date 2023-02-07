@@ -25,54 +25,69 @@ const temperature5 = document.getElementById('temperature-5')
 const humidity5 = document.getElementById('humidity-5')
 const windSpeed5 = document.getElementById('windspeed-5')
 const icon5 = document.getElementById('icon-5')
+const currentCity = document.getElementById('current-city')
+const currentDate = document.getElementById('current-date')
+const currentTemperature = document.getElementById('current-temperature')
+const currentHumidity = document.getElementById('current-humidity')
+const currentWindSpeed = document.getElementById('current-windspeed')
+const currentIcon = document.getElementById('current-icon')
 
 
 function cityInput(city) {
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function(response){
-    return response.json()
-}).then(function(data){
-    console.log(data)
-    
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function(response){
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function (response) {
         return response.json()
-    }).then(function(data){
+    }).then(function (data) {
         console.log(data)
 
-      date.innerHTML = `<span> Date: ${data.list[0].dt_txt}</span>`
-      temperature.innerHTML = `<span> Temperature: ${data.list[0].main.temp} °F</span>`
-      humidity.innerHTML = `<span> Humidity: ${data.list[0].main.humidity}</span>`
-      windSpeed.innerHTML = `<span> Wind Speed: ${data.list[0].wind.speed}</span>`
-      icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+        var cdate = dayjs().format('YYYY-MM-DD')
 
-      date2.innerHTML = `<span> Date: ${data.list[8].dt_txt}</span>`
-      temperature2.innerHTML = `<span> Temperature: ${data.list[8].main.temp} °F</span>`
-      humidity2.innerHTML = `<span> Humidity: ${data.list[8].main.humidity}</span>`
-      windSpeed2.innerHTML = `<span> Wind Speed: ${data.list[8].wind.speed}</span>`
-      icon2.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+        currentCity.innerHTML = `<span> City: ${data.name}</span>`
+        currentDate.innerHTML = `<span> Date: ${cdate}</span>`
+        currentTemperature.innerHTML = `<span> Temperature: ${data.main.temp} °F</span>`
+        currentHumidity.innerHTML = `<span> Humidity: ${data.main.humidity}</span>`
+        currentWindSpeed.innerHTML = `<span> Wind Speed: ${data.wind.speed}</span>`
+        currentIcon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
 
-      date3.innerHTML = `<span> Date: ${data.list[16].dt_txt}</span>`
-      temperature3.innerHTML = `<span> Temperature: ${data.list[16].main.temp} °F</span>`
-      humidity3.innerHTML = `<span> Humidity: ${data.list[16].main.humidity}</span>`
-      windSpeed3.innerHTML = `<span> Wind Speed: ${data.list[16].wind.speed}</span>`
-      icon3.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data)
 
-      date4.innerHTML = `<span> Date: ${data.list[24].dt_txt}</span>`
-      temperature4.innerHTML = `<span> Temperature: ${data.list[24].main.temp} °F</span>`
-      humidity4.innerHTML = `<span> Humidity: ${data.list[24].main.humidity}</span>`
-      windSpeed4.innerHTML = `<span> Wind Speed: ${data.list[24].wind.speed}</span>`
-      icon4.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+            date.innerHTML = `<span> Date: ${data.list[0].dt_txt}</span>`
+            temperature.innerHTML = `<span> Temperature: ${data.list[0].main.temp} °F</span>`
+            humidity.innerHTML = `<span> Humidity: ${data.list[0].main.humidity}</span>`
+            windSpeed.innerHTML = `<span> Wind Speed: ${data.list[0].wind.speed}</span>`
+            icon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
 
-      date5.innerHTML = `<span> Date: ${data.list[32].dt_txt}</span>`
-      temperature5.innerHTML = `<span> Temperature: ${data.list[32].main.temp} °F</span>`
-      humidity5.innerHTML = `<span> Humidity: ${data.list[32].main.humidity}</span>`
-      windSpeed5.innerHTML = `<span> Wind Speed: ${data.list[32].wind.speed}</span>`
-      icon5.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+            date2.innerHTML = `<span> Date: ${data.list[8].dt_txt}</span>`
+            temperature2.innerHTML = `<span> Temperature: ${data.list[8].main.temp} °F</span>`
+            humidity2.innerHTML = `<span> Humidity: ${data.list[8].main.humidity}</span>`
+            windSpeed2.innerHTML = `<span> Wind Speed: ${data.list[8].wind.speed}</span>`
+            icon2.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
 
-  })
- })
+            date3.innerHTML = `<span> Date: ${data.list[16].dt_txt}</span>`
+            temperature3.innerHTML = `<span> Temperature: ${data.list[16].main.temp} °F</span>`
+            humidity3.innerHTML = `<span> Humidity: ${data.list[16].main.humidity}</span>`
+            windSpeed3.innerHTML = `<span> Wind Speed: ${data.list[16].wind.speed}</span>`
+            icon3.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+            date4.innerHTML = `<span> Date: ${data.list[24].dt_txt}</span>`
+            temperature4.innerHTML = `<span> Temperature: ${data.list[24].main.temp} °F</span>`
+            humidity4.innerHTML = `<span> Humidity: ${data.list[24].main.humidity}</span>`
+            windSpeed4.innerHTML = `<span> Wind Speed: ${data.list[24].wind.speed}</span>`
+            icon4.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+            date5.innerHTML = `<span> Date: ${data.list[32].dt_txt}</span>`
+            temperature5.innerHTML = `<span> Temperature: ${data.list[32].main.temp} °F</span>`
+            humidity5.innerHTML = `<span> Humidity: ${data.list[32].main.humidity}</span>`
+            windSpeed5.innerHTML = `<span> Wind Speed: ${data.list[32].wind.speed}</span>`
+            icon5.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
+
+        })
+    })
 }
 
-searchBtn.addEventListener('click', function(event){
+searchBtn.addEventListener('click', function (event) {
     event.preventDefault()
     cityInput(userCity.value.trim())
 })
