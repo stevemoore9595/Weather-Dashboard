@@ -31,6 +31,7 @@ const currentTemperature = document.getElementById('current-temperature')
 const currentHumidity = document.getElementById('current-humidity')
 const currentWindSpeed = document.getElementById('current-windspeed')
 const currentIcon = document.getElementById('current-icon')
+let searchHistory = []
 
 
 function cityInput(city) {
@@ -89,5 +90,44 @@ function cityInput(city) {
 
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault()
-    cityInput(userCity.value.trim())
+    let city = userCity.value.trim()
+    cityInput(city)
+    if (searchHistory.indexOf(city)!== -1) {
+        return 
+    }
+    searchHistory.push(city)
+    localStorage.setItem('city-history', JSON.stringify(searchHistory))
+    searchHistoryBtns()
 })
+
+function searchHistoryBtns() {
+    document.querySelector('.history-btns').innerHTML = ''
+    for (let i = 0; i< searchHistory.length; i++) {
+        let cityBtn = document.createElement('button')
+        cityBtn.classList.add('history-btn')
+        cityBtn.setAttribute('data-search', searchHistory[i])
+        cityBtn.textContent = searchHistory[i]
+        document.querySelector('.history-btns').append(cityBtn)
+    }
+}
+
+function initSearchHistory() {
+    let history = localStorage.getItem('city-history')
+    if (history) {
+        searchHistory = JSON.parse(history)
+    }
+    searchHistoryBtns()
+}
+
+initSearchHistory()
+
+
+function handleSearchClick(e) {
+    if (!e.target.matches('.history-btn')) {
+        return
+    }
+    let cityBtn = e.target
+    let city = cityBtn.getAttribute('data-search')
+    cityInput(city)
+}
+document.querySelector('.history-btns').addEventListener('click', handleSearchClick)
