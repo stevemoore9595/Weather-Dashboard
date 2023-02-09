@@ -13,3 +13,5 @@ The deployed application can be found at this link:
 Please refer to the LICENSE in the repository
 
 ## Screenshot
+
+![weather-dashboard-image](https://user-images.githubusercontent.com/38742748/217897656-3cccf9f5-2cee-43f0-98da-c267e55553d6.png)
