@@ -6,11 +6,11 @@ The Weather Dashboard was a fun challenge to take on from scratch. I had a hard 
 
 ## API Resource
 
-https://openweathermap.org
+https://openweathermap.org/
  
 ## Deployed Application
 
-The deployed application can be found at this link: 
+The deployed application can be found at this link: https://stevemoore9595.github.io/Weather-Dashboard/
 
 ## License
 
