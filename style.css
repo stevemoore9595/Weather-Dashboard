@@ -8,22 +8,25 @@ header {
   align-items: center;
   border: solid;
   border-color: black;
+  height: 150px;
   margin: none;
   border-radius: 10px;
-  background-color: lightyellow;
 }
 
 body {
- /* background-image: url("./assets/css/images/stars-bg-image.jpg");*/
  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- background-color: lightblue;
+ background-image: url("./assets/css/images/weather-dashboard-bg4.jpg");
+ background-size: 1920px 1000px;
+ color:white;
 }
 
 .search-section {
   display: flex;
   justify-content: flex-start;
   margin-top: 20px;
+  margin-left: 80px;
   padding: 10px;
+  height: 60px;
 }
 
 .ph-box {
@@ -32,7 +35,7 @@ body {
 }
 
 .main-btn {
-  margin-left: 20px;
+  margin-left: 40px;
   border: none;
   border-radius: 10px;
   background-color: lightgray;
@@ -46,44 +49,52 @@ body {
   color: lightgray;
   
 }
-.history-btns {
+
+.h-buttons {
   display: flex;
-  justify-content: center;
-  margin-left: 100px;
 }
 
-.search-history:hover {
-  background-color: black;
-  color: lightgray;
-}
-.search-history {
+.history-btn {
   align-items:center;
   border: none;
   border-radius: 10px;
   background-color: lightgray;
-  width: 100px;
+  width: 150px;
   padding: 10px;
-  margin: 10px;
+  margin: 20px 45px 0px 45px;
   cursor: pointer;
 }
 
-.search-history:hover {
+
+.history-btn:hover {
   background-color: black;
   color: lightgray;
 }
 
+.c-box {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 130px;
+  
+}
+
 .current {
+  text-align: center;
   border: normal;
   border-radius: 10px;
-  /* background-color: lightgray; */
-  height: 325px;
+  min-width: 600px;
+  width: 600px;
+  height: 350px;
   box-shadow: 1px 1px 6px 1px black;
 }
 
+
+.current-card {
+  text-align: center;
+}
 .future {
   border: normal;
   border-radius: 10px;
-  /* background-color: lightgray; */
   height: 400px;
   padding: 1px;
 }
@@ -94,6 +105,7 @@ body {
   width: 225px;
   height: 300px;
   box-shadow: 2px 2px 7px 2px black;
+  text-align: center;
 }
 
 .wrap {

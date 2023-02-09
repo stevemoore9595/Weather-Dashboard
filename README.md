@@ -2,25 +2,8 @@
 
 ## Description
 
-
-
-## User Story
-
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-
-## Acceptance Criteria
-
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-
+The Weather Dashboard was a fun challenge to take on from scratch. I had a hard time of figuring out how to get my API's to work, but once I got it to work and understand how to use it, I was excited to see my app grow and obtain the weather data. I ran into a few styling issues as well and I tried to fix everthing by just looking at my code, but I later decided to inspect my web application and that helped me so much. I haven't inspected my page a lot to help me with my styling, but I realized that this is very important to make the page look how I want it to be.
+ 
 ## Deployed Application
 
 The deployed application can be found at this link: 

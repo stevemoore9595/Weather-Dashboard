@@ -1,3 +1,4 @@
+// Group of variables equally the id's in the HTML
 const searchBtn = document.getElementById('search-btn')
 const userCity = document.getElementById('input-city')
 const date = document.getElementById('date')
@@ -33,13 +34,14 @@ const currentWindSpeed = document.getElementById('current-windspeed')
 const currentIcon = document.getElementById('current-icon')
 let searchHistory = []
 
-
+// Current Day API
 function cityInput(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function (response) {
         return response.json()
     }).then(function (data) {
         console.log(data)
 
+        // Current Day Forecast
         var cdate = dayjs().format('YYYY-MM-DD')
 
         currentCity.innerHTML = `<span> City: ${data.name}</span>`
@@ -49,11 +51,13 @@ function cityInput(city) {
         currentWindSpeed.innerHTML = `<span> Wind Speed: ${data.wind.speed}</span>`
         currentIcon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon" class="weather-pic"></img>`
 
+        // Five Day Forecast API
         fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data.coord.lat}&lon=${data.coord.lon}&units=imperial&appid=d02f6a61ab39731d12f55d46b13ebb91`).then(function (response) {
             return response.json()
         }).then(function (data) {
             console.log(data)
 
+            // Five Day Forecast
             date.innerHTML = `<span> Date: ${data.list[0].dt_txt}</span>`
             temperature.innerHTML = `<span> Temperature: ${data.list[0].main.temp} °F</span>`
             humidity.innerHTML = `<span> Humidity: ${data.list[0].main.humidity}</span>`
@@ -88,6 +92,7 @@ function cityInput(city) {
     })
 }
 
+// Saving the data to the local storage
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault()
     let city = userCity.value.trim()
@@ -111,6 +116,7 @@ function searchHistoryBtns() {
     }
 }
 
+// Getting the saved data from the local storage
 function initSearchHistory() {
     let history = localStorage.getItem('city-history')
     if (history) {

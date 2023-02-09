@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,33 @@
     <link rel="stylesheet" href="./style.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header>
-        <h1>🌩️ Weather Dashboard 🌩️</h1>
+        <h1>Weather Dashboard</h1>
     </header>
     <section class="search-section">
-        <input type="text" id="input-city" class="ph-box" placeholder="Search for a city...">
+        <input type="text" id="input-city" class="ph-box" placeholder=" Search for a city...">
         <button id="search-btn" class="main-btn">Search</button>
-    <div class="history-btns">Previously Searched Cities
-       
-    </div>
-    </section>
-    <section>
-        <div id="current-card" class="current">
+    </section>  
+    
+    <section class="c-box">
+        <section class="h-buttons">  
+            <h2></h2>
+            <div class="history-btns">
+    
+            </div>
+        </section>
+        <div class="current">
             <h2 id="c-forecast-section">Current Forecast:</h2>
-            <p id="current-city"></p>
-            <p id="current-date"></p>
-            <p id="current-temperature"></p>
-            <p id="current-humidity"></p>
-            <p id="current-windspeed"></p>
-            <p id="current-icon"></p>
+            <div class="current-card">
+                <p id="current-city"></p>
+                <p id="current-date"></p>
+                <p id="current-temperature"></p>
+                <p id="current-humidity"></p>
+                <p id="current-windspeed"></p>
+                <p id="current-icon"></p>
+            </div>
         </div>
     </section>
     <section class="future">
@@ -44,28 +52,28 @@
                 <p id="temperature-2"></p>
                 <p id="humidity-2"></p>
                 <p id="windspeed-2"></p>
-                <p id="icon-2"></p>    
+                <p id="icon-2"></p>
             </div>
             <div id="card-3" class="cards">
                 <p id="date-3"></p>
                 <p id="temperature-3"></p>
                 <p id="humidity-3"></p>
                 <p id="windspeed-3"></p>
-                <p id="icon-3"></p>    
+                <p id="icon-3"></p>
             </div>
             <div id="card-4" class="cards">
                 <p id="date-4"></p>
                 <p id="temperature-4"></p>
                 <p id="humidity-4"></p>
                 <p id="windspeed-4"></p>
-                <p id="icon-4"></p>    
+                <p id="icon-4"></p>
             </div>
             <div id="card-5" class="cards">
                 <p id="date-5"></p>
                 <p id="temperature-5"></p>
                 <p id="humidity-5"></p>
                 <p id="windspeed-5"></p>
-                <p id="icon-5"></p>   
+                <p id="icon-5"></p>
             </div>
         </div>
     </section>
@@ -73,4 +81,5 @@
     <script>dayjs().format()</script>
     <script src="script.js"></script>
 </body>
+
 </html>
